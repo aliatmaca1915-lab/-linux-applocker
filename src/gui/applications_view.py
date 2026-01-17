@@ -27,7 +27,7 @@ class ApplicationsView(Gtk.Box):
         
         # Search entry
         self.search_entry = Gtk.SearchEntry()
-        # GTK4 SearchEntry: use property instead of set_placeholder_text() method
+        # GTK4 removed set_placeholder_text() method; use set_property() instead
         self.search_entry.set_property('placeholder-text', 'Uygulama ara...')
         self.search_entry.set_hexpand(True)
         self.search_entry.connect('search-changed', self._on_search_changed)
