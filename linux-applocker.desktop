@@ -1,0 +1,17 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Linux AppLocker
+Name[tr]=Linux AppLocker
+Comment=Professional Application and File Locking System
+Comment[tr]=Profesyonel Uygulama ve Dosya Kilitleme Sistemi
+GenericName=Application Locker
+GenericName[tr]=Uygulama Kilitleyici
+Exec=linux-applocker
+Icon=linux-applocker
+Terminal=false
+StartupNotify=true
+Categories=Security;Utility;System;
+Keywords=security;lock;encryption;password;privacy;
+Keywords[tr]=güvenlik;kilit;şifreleme;parola;gizlilik;
+StartupWMClass=linux-applocker
