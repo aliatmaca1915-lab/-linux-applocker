@@ -1,0 +1,24 @@
+/* Linux AppLocker - GTK CSS Styles */
+
+/* Error labels */
+.error {
+    color: #c01c28;
+    font-weight: bold;
+}
+
+/* Success elements */
+.success {
+    color: #26a269;
+}
+
+/* Card styling */
+.card {
+    background-color: alpha(@theme_bg_color, 0.5);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+/* Dim labels */
+.dim-label {
+    opacity: 0.7;
+}
