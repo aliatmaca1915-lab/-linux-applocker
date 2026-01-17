@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Tuple, Optional
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2
+from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from cryptography.hazmat.backends import default_backend
 
 
@@ -35,7 +35,7 @@ class FileEncryption:
         Returns:
             Derived encryption key
         """
-        kdf = PBKDF2(
+        kdf = PBKDF2HMAC(
             algorithm=hashes.SHA256(),
             length=self.KEY_SIZE,
             salt=salt,
