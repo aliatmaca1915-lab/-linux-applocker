@@ -1,0 +1,13 @@
+[Unit]
+Description=Linux AppLocker Background Service
+Documentation=https://github.com/aliatmaca1915-lab/-linux-applocker
+After=graphical.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/linux-applocker --daemon
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=default.target
