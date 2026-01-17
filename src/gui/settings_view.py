@@ -92,12 +92,17 @@ class SettingsView(Gtk.Box):
         notifications_group.set_title("Bildirimler")
         
         # Enable notifications
-        notifications_row = Adw.SwitchRow()
+        notifications_row = Adw.ActionRow()
         notifications_row.set_title("Bildirimleri Etkinleştir")
         notifications_row.set_subtitle("Erişim denemelerinde bildirim göster")
+        
+        notifications_switch = Gtk.Switch()
+        notifications_switch.set_valign(Gtk.Align.CENTER)
         notifications_enabled = self.main_window.config.get('notifications_enabled', True)
-        notifications_row.set_active(notifications_enabled)
-        notifications_row.connect('notify::active', self._on_notifications_changed)
+        notifications_switch.set_active(notifications_enabled)
+        notifications_switch.connect('notify::active', self._on_notifications_changed)
+        notifications_row.add_suffix(notifications_switch)
+        
         notifications_group.add(notifications_row)
         
         settings_box.append(notifications_group)
@@ -107,12 +112,17 @@ class SettingsView(Gtk.Box):
         system_group.set_title("Sistem")
         
         # Start on boot
-        autostart_row = Adw.SwitchRow()
+        autostart_row = Adw.ActionRow()
         autostart_row.set_title("Başlangıçta Çalıştır")
         autostart_row.set_subtitle("Sistem açılışında otomatik başlat")
+        
+        autostart_switch = Gtk.Switch()
+        autostart_switch.set_valign(Gtk.Align.CENTER)
         autostart_enabled = self.main_window.config.get('start_on_boot', False)
-        autostart_row.set_active(autostart_enabled)
-        autostart_row.connect('notify::active', self._on_autostart_changed)
+        autostart_switch.set_active(autostart_enabled)
+        autostart_switch.connect('notify::active', self._on_autostart_changed)
+        autostart_row.add_suffix(autostart_switch)
+        
         system_group.add(autostart_row)
         
         # Process monitor status

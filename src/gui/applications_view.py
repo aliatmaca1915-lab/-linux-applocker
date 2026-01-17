@@ -27,7 +27,7 @@ class ApplicationsView(Gtk.Box):
         
         # Search entry
         self.search_entry = Gtk.SearchEntry()
-        self.search_entry.set_placeholder_text("Uygulama ara...")
+        # Note: GTK4 SearchEntry uses placeholder-text property, not set_placeholder_text()
         self.search_entry.set_hexpand(True)
         self.search_entry.connect('search-changed', self._on_search_changed)
         toolbar.append(self.search_entry)
